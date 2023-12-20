@@ -142,3 +142,63 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+const books = getBooks();
+const book = getBook(1);
+books;
+
+const newB = {
+  id: 100,
+  title: "The sweet Rings",
+  publicationDate: "1954-07-29",
+  author: "J. R. R. Tolkien",
+};
+newB;
+
+const BooksUpdate = [...books, newB];
+BooksUpdate;
+
+const booksDel = BooksUpdate.filter((book) => {
+ return book.id !== 1;
+})
+BooksUpdate
+booksDel;
+
+
+const booksUpdate = booksDel.map(book => book.id === 100 ? {...book, title: 'new man'}: book )
+
+booksUpdate
+
+
+booksUpdate
+
+
+//  fetch("https://jsonplaceholder.typicode.com/todos/").then(pro => pro.json()).then( data => console.log(data));
+ async function api () {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
+  const data = await res.json()
+   console.log(data)
+
+   
+}
+
+data
+
+const neen = data.map(i => i)
+neen
+
+// const author = book.author
+// const genres = book.genres
+// const newT = {...book, title: 'cry more', pages: 400}
+// console.log(newT)
+// const gist = `this book has ${hasMovieAdaptation ? 'a' : 'no' } movie`
+// gist
+
+// author
+// genres
+// const [primaryG, secondaryG, ...restG] = genres
+// primaryG
+// secondaryG
+// restG
+// book
+// books;
