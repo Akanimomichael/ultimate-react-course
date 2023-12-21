@@ -145,47 +145,69 @@ function getBook(id) {
 
 const books = getBooks();
 const book = getBook(1);
-books;
-
-const newB = {
-  id: 100,
-  title: "The sweet Rings",
-  publicationDate: "1954-07-29",
-  author: "J. R. R. Tolkien",
-};
-newB;
-
-const BooksUpdate = [...books, newB];
-BooksUpdate;
-
-const booksDel = BooksUpdate.filter((book) => {
- return book.id !== 1;
-})
-BooksUpdate
-booksDel;
 
 
-const booksUpdate = booksDel.map(book => book.id === 100 ? {...book, title: 'new man'}: book )
-
-booksUpdate
+// DISPLAY BOOKS ON UI
 
 
-booksUpdate
+// const bookDiv = document.querySelector.getElementById('select')
+// const bookDiv = document.getElementById('select').innerText = 'hello'
+
+// const displayBooks = books.map(book => {
+//   return (
+//     <>
+//       <h3>Name :{book.title}</h3>
+//       <h3>publication date: {book.publicationDate}</h3>
+//       <h3>author: {book.author}</h3>
+//     </>
+//   );
+// })
+
+// bookDiv.add.innerHtlm(displayBooks)
+// console.log(displayBooks)
+
+
+// books;
+
+// const newB = {
+//   id: 100,
+//   title: "The sweet Rings",
+//   publicationDate: "1954-07-29",
+//   author: "J. R. R. Tolkien",
+// };
+// newB;
+
+// const BooksUpdate = [...books, newB];
+// BooksUpdate;
+
+// const booksDel = BooksUpdate.filter((book) => {
+//  return book.id !== 1;
+// })
+// BooksUpdate
+// booksDel;
+
+
+// const booksUpdate = booksDel.map(book => book.id === 100 ? {...book, title: 'new man'}: book )
+
+// booksUpdate
+
+
+// booksUpdate
 
 
 //  fetch("https://jsonplaceholder.typicode.com/todos/").then(pro => pro.json()).then( data => console.log(data));
- async function api () {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
-  const data = await res.json()
-   console.log(data)
+//  async function api () {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
+//   const data = await res.json()
+//    console.log(data)
 
    
-}
+// }
 
-data
+// data
 
-const neen = data.map(i => i)
-neen
+// const neen = data.map(i => i)
+// neen
 
 // const author = book.author
 // const genres = book.genres
