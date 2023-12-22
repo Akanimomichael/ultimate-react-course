@@ -138,6 +138,9 @@ const data = [
   },
 ];
 function App() {
+
+  const hour = new Date().getFullYear()
+  console.log(hour)
   return (
     <>
       {data.map((data) => (
