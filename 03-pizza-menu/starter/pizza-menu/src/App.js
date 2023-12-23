@@ -173,11 +173,8 @@ const skills = [
 function App() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
-
   useEffect(() => {
-    
-      setTime(new Date().toLocaleTimeString());
-    
+    setTime(new Date().toLocaleTimeString());
   }, []);
 
   // const hour = new Date().getFullYear()
@@ -309,10 +306,7 @@ function App() {
         customized with props */}
         {/* // */}
 
-        
-          <SkillList />
-        
-        
+        <SkillList />
       </div>
 
       {time}
@@ -341,23 +335,36 @@ function Intro() {
 function SkillList() {
   return (
     <div className="skill-list">
-      <Skill text="laughter" emoji="😂" bg="blue" />
+      {skills.map((skill) => (
+        <Skill text={skill.skill} emoji={skill.level} bg={skill.color} />
+      ))}
+
+      {/* <Skill text="laughter" emoji="😂" bg="blue" />
       <Skill text="laughter excess" emoji="🤣" bg="yellow" />
       <Skill text="crush" emoji="😊" bg="pink" />
       <Skill text="love" emoji=" ❤️" bg="orange" />
-      <Skill text="yeye" emoji="😒" bg="brown" />
+      <Skill text="yeye" emoji="😒" bg="brown" /> */}
     </div>
   );
 }
 
-function Skill(props) {
+function Skill({ text, emoji, bg }) {
+  // const skillsLevel = (emoji === 'advanced') {
+  //   return <span>😂</span>
+  // } (emoji === 'beginner') {
+  //     return <span>😊</span>
+  // } else{
+  //     return <span>❤️</span>
+  // }
   return (
-    <div
-      className="skill"
-      style={{ backgroundColor: props.bg, }}
-    >
-      <span>{props.text}</span>
-      <span>{props.emoji}</span>
+    <div className="skill" style={{ backgroundColor: bg }}>
+      <span>{text}</span>
+
+      <span>
+        {emoji === "advanced" &&"😂"}{" "}
+        {emoji === "intermediate" && "❤️" }
+        {emoji === "beginner" &&"😊" }{" "}
+      </span>
     </div>
   );
 }
