@@ -1,5 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import { useState, useEffect } from "react";
 
 const data = [
   {
@@ -137,125 +138,227 @@ const data = [
     },
   },
 ];
+const skills = [
+  {
+    skill: "HTML+CSS",
+    level: "advanced",
+    color: "#2662EA",
+  },
+  {
+    skill: "JavaScript",
+    level: "advanced",
+    color: "#EFD81D",
+  },
+  {
+    skill: "Web Design",
+    level: "advanced",
+    color: "#C3DCAF",
+  },
+  {
+    skill: "Git and GitHub",
+    level: "intermediate",
+    color: "#E84F33",
+  },
+  {
+    skill: "React",
+    level: "advanced",
+    color: "#60DAFB",
+  },
+  {
+    skill: "Svelte",
+    level: "beginner",
+    color: "#FF3B00",
+  },
+];
 function App() {
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
 
-  const hour = new Date().getFullYear()
-  console.log(hour)
+
+  useEffect(() => {
+    
+      setTime(new Date().toLocaleTimeString());
+    
+  }, []);
+
+  // const hour = new Date().getFullYear()
+  // console.log(hour)
+  // return (
+  //   <>
+  //     {data.map((data) => (
+  //       <div key={data.id} style={{ paddingTop: "40px" }}>
+  //         <h3>Name :{data.title}</h3>
+  //         <h3>publication date: {data.publicationDate} </h3>
+  //         <h3>author: {data.author} </h3>
+  //         <h3 style={{ display: "flex" }}>
+  //           genres:{" "}
+  //           {data.genres.map((genres, i) => (
+  //             <h4 key={i} style={{ display: "flex", paddingLeft: "20px" }}>
+  //               {" "}
+  //               {genres}{" "}
+  //             </h4>
+  //           ))}{" "}
+  //         </h3>
+  //         <h3>
+  //           has movie adaptation: {data.hasMovieAdaptation ? "Yes" : "No"}{" "}
+  //         </h3>
+  //         <h3>pages : {data.pages} </h3>
+  //         <h3>
+  //           translations :{" "}
+  //           {data.translations.bengali ||
+  //           data.translations.chinese ||
+  //           data.translations.french ||
+  //           data.translations.korean ||
+  //           data.translations.polish ||
+  //           data.translations.portuguese ||
+  //           data.translations.spanish
+  //             ? "Avalible Translations "
+  //             : "No translation"}{" "}
+  //         </h3>
+  //         {data.translations.spanish ? (
+  //           <p>spanish : {data.translations.spanish} </p>
+  //         ) : (
+  //           ""
+  //         )}
+  //         {data.translations.bengali ? (
+  //           <p>bengali : {data.translations.bengali} </p>
+  //         ) : (
+  //           ""
+  //         )}
+  //         {data.translations.chinese ? (
+  //           <p>chinese : {data.translations.chinese} </p>
+  //         ) : (
+  //           ""
+  //         )}
+  //         {data.translations.french ? (
+  //           <p>french : {data.translations.french} </p>
+  //         ) : (
+  //           ""
+  //         )}
+  //         {data.translations.korean ? (
+  //           <p>korean : {data.translations.korean} </p>
+  //         ) : (
+  //           ""
+  //         )}
+  //         {data.translations.polish ? (
+  //           <p> polish : {data.translations.polish} </p>
+  //         ) : (
+  //           ""
+  //         )}
+  //         {data.translations.portuguese ? (
+  //           <p>portuguese : {data.translations.portuguese} </p>
+  //         ) : (
+  //           ""
+  //         )}
+  //         {/* rating: 4.36, ratingsCount: 38358, reviewsCount: 1095, */}
+  //         <h3 style={{ display: "block" }}>
+  //           reviews <br />{" "}
+  //         </h3>
+  //         <h3>Good reads</h3>
+  //         <h4>
+  //           {" "}
+  //           {[
+  //             `rating : ${data.reviews.goodreads.rating}`,
+  //             <br />,
+  //             ` rating count : ${data.reviews.goodreads.ratingsCount}`,
+  //             <br />,
+  //             ` reviews count : ${data.reviews.goodreads.reviewsCount}`,
+  //             <br />,
+  //             ` total good reeds ${
+  //               data.reviews.goodreads.reviewsCount +
+  //               data.reviews.goodreads.ratingsCount +
+  //               data.reviews.goodreads.rating
+  //             }`,
+  //           ]}
+  //         </h4>
+  //         <br />
+  //         <h3> library thing</h3>
+  //         <h4>
+  //           {" "}
+  //           {[
+  //             `rating : ${data.reviews.librarything?.rating}`,
+  //             <br />,
+  //             ` rating count : ${data.reviews.librarything?.ratingsCount}`,
+  //             <br />,
+  //             ` reviews count : ${data.reviews.librarything?.reviewsCount}`,
+  //             <br />,
+  //             ` total library thing ${
+  //               data.reviews.librarything?.reviewsCount +
+  //               data.reviews.librarything?.ratingsCount +
+  //               data.reviews.librarything?.rating
+  //             }`,
+  //           ]}
+  //         </h4>
+
+  //         {/* {console.log(
+  //           data.translations.bengali || data.translations.chinese
+  //             ? "cool"
+  //             : "not cool"
+  //         )} */}
+  //       </div>
+  //     ))}
+  //   </>
+  // );
+
   return (
-    <>
-      {data.map((data) => (
-        <div key={data.id} style={{ paddingTop: "40px" }}>
-          <h3>Name :{data.title}</h3>
-          <h3>publication date: {data.publicationDate} </h3>
-          <h3>author: {data.author} </h3>
-          <h3 style={{ display: "flex" }}>
-            genres:{" "}
-            {data.genres.map((genres, i) => (
-              <h4 key={i} style={{ display: "flex", paddingLeft: "20px" }}>
-                {" "}
-                {genres}{" "}
-              </h4>
-            ))}{" "}
-          </h3>
-          <h3>
-            has movie adaptation: {data.hasMovieAdaptation ? "Yes" : "No"}{" "}
-          </h3>
-          <h3>pages : {data.pages} </h3>
-          <h3>
-            translations :{" "}
-            {data.translations.bengali ||
-            data.translations.chinese ||
-            data.translations.french ||
-            data.translations.korean ||
-            data.translations.polish ||
-            data.translations.portuguese ||
-            data.translations.spanish
-              ? "Avalible Translations "
-              : "No translation"}{" "}
-          </h3>
-          {data.translations.spanish ? (
-            <p>spanish : {data.translations.spanish} </p>
-          ) : (
-            ""
-          )}
-          {data.translations.bengali ? (
-            <p>bengali : {data.translations.bengali} </p>
-          ) : (
-            ""
-          )}
-          {data.translations.chinese ? (
-            <p>chinese : {data.translations.chinese} </p>
-          ) : (
-            ""
-          )}
-          {data.translations.french ? (
-            <p>french : {data.translations.french} </p>
-          ) : (
-            ""
-          )}
-          {data.translations.korean ? (
-            <p>korean : {data.translations.korean} </p>
-          ) : (
-            ""
-          )}
-          {data.translations.polish ? (
-            <p> polish : {data.translations.polish} </p>
-          ) : (
-            ""
-          )}
-          {data.translations.portuguese ? (
-            <p>portuguese : {data.translations.portuguese} </p>
-          ) : (
-            ""
-          )}
-          {/* rating: 4.36, ratingsCount: 38358, reviewsCount: 1095, */}
-          <h3 style={{ display: "block" }}>
-            reviews <br />{" "}
-          </h3>
-          <h3>Good reads</h3>
-          <h4>
-            {" "}
-            {[
-              `rating : ${data.reviews.goodreads.rating}`,
-              <br />,
-              ` rating count : ${data.reviews.goodreads.ratingsCount}`,
-              <br />,
-              ` reviews count : ${data.reviews.goodreads.reviewsCount}`,
-              <br />,
-              ` total good reeds ${
-                data.reviews.goodreads.reviewsCount +
-                data.reviews.goodreads.ratingsCount +
-                data.reviews.goodreads.rating
-              }`,
-            ]}
-          </h4>
-          <br />
-          <h3> library thing</h3>
-          <h4>
-            {" "}
-            {[
-              `rating : ${data.reviews.librarything?.rating}`,
-              <br />,
-              ` rating count : ${data.reviews.librarything?.ratingsCount}`,
-              <br />,
-              ` reviews count : ${data.reviews.librarything?.reviewsCount}`,
-              <br />,
-              ` total library thing ${
-                data.reviews.librarything?.reviewsCount +
-                data.reviews.librarything?.ratingsCount +
-                data.reviews.librarything?.rating
-              }`,
-            ]}
-          </h4>
+    <div className="card">
+      <Avatar />
+      <div className="data">
+        <Intro />
+        {/* Should contain one Skill component
+        for each web dev skill that you have,
+        customized with props */}
+        {/* // */}
 
-          {/* {console.log(
-            data.translations.bengali || data.translations.chinese
-              ? "cool"
-              : "not cool"
-          )} */}
-        </div>
-      ))}
-    </>
+        
+          <SkillList />
+        
+        
+      </div>
+
+      {time}
+    </div>
+  );
+}
+
+function Avatar() {
+  return (
+    <div>
+      <img src="good.png" alt="" srcset="" style={{ width: "100%" }} />
+    </div>
+  );
+}
+
+function Intro() {
+  return (
+    <p>
+      Download and use 60,000+ Happy. stock photos for free. Thousands of new
+      images every day Completely Free to Use High-quality videos and images
+      from Pexels. Explore. License
+    </p>
+  );
+}
+
+function SkillList() {
+  return (
+    <div className="skill-list">
+      <Skill text="laughter" emoji="😂" bg="blue" />
+      <Skill text="laughter excess" emoji="🤣" bg="yellow" />
+      <Skill text="crush" emoji="😊" bg="pink" />
+      <Skill text="love" emoji=" ❤️" bg="orange" />
+      <Skill text="yeye" emoji="😒" bg="brown" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div
+      className="skill"
+      style={{ backgroundColor: props.bg, }}
+    >
+      <span>{props.text}</span>
+      <span>{props.emoji}</span>
+    </div>
   );
 }
 
